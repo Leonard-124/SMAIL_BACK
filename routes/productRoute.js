@@ -5,6 +5,12 @@ const {createProduct, getProducts, getProductById, updateProduct, deleteProduct}
 
 const router = express.Router()
 
+const upload = multer({ dest: 'uploads/'});
+
 router.get("/", getProducts);
 router.get("/:id", getProductById);
-router.post("/", uploader.single())
+router.post("/", upload.single('image'), createProduct);
+router.put("/:id", upload.single('image'), updateProduct);
+router.delete("/:id", deleteProduct);
+
+module.exports = router;

@@ -13,6 +13,7 @@ async function createProduct(req, res) {
             category,
             oldPrice,
             newPrice,
+            quantity,
             imageUrl: uploadResult.secure_url,
             publicId: uploadResult.public_id
         });
