@@ -155,7 +155,7 @@ app.use(
 );
 
 // ─── CORS ─────────────────────────────────────────────────────────────────────
-const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:5174")
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:5173" || "almofarmproducesuppliers.com")
   .split(",")
   .map((o) => o.trim());
 
