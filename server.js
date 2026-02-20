@@ -51,8 +51,8 @@ app.use(
 
 // ─── Rate Limiting ─────────────────────────────────────────────────────────────
 const authLimiter = rateLimit({
-  windowMs: 5 * 60 * 1000,
-  max: 20,
+  windowMs: 15 * 60 * 1000,
+  max: 1000,
   message: { error: "Too many requests, please try again later." },
   standardHeaders: true,
   legacyHeaders: false,
@@ -69,7 +69,7 @@ const mpesaLimiter = rateLimit({
 
 const generalLimiter = rateLimit({
   windowMs: 5 * 60 * 1000,
-  max: 200,
+  max: 1000,
   message: { error: "Too many requests, please try again later." },
   standardHeaders: true,
   legacyHeaders: false,
@@ -78,7 +78,7 @@ const generalLimiter = rateLimit({
 
 const adminLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 100,
+  max: 1000,
   message: { error: "Too many admin requests, please try again later." },
   standardHeaders: true,
   legacyHeaders: false,
